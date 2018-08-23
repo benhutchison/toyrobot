@@ -52,8 +52,19 @@ The program reads input from stdin and reports to stdout. Commands other than th
 
 The end the program from an interactive prompt, send an EOF signal (Ctl-D on Mac OSX)
 
+Example
 ```
-sbt run
+> sbt run
+...
+[info] Running toyrobot.RobotRunner
+PLACE 1,1,EAST
+MOVE
+RIGHT
+MOVE
+REPORT
+2,0,SOUTH
+<ctl-d>
+[success] Total time: 34 s, completed 23/08/2018 1:42:54 PM
 ```
 
 ### Unit Tests
