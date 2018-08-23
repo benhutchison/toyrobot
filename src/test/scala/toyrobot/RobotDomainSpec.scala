@@ -18,6 +18,18 @@ class RobotDomainSpec extends org.specs2.mutable.Specification {
 
   eg (UnplacedRobot.place(Table5x5, 1, 1, North).right.move.report must_== Some("2,1,EAST"))
 
+  eg(Table5x5.contains(-1, -1) must beFalse)
+
+  eg(Table5x5.contains(0, 0) must beTrue)
+
+  eg(Table5x5.contains(4, 4) must beTrue)
+
+  eg(Table5x5.contains(5, 5) must beFalse)
+
+  "cannot move off the table" ! {
+    UnplacedRobot.place(Table5x5, 4, 4, North).move.report must_== Some("4,4,NORTH")
+  }
+
   "6 rotations is a 480 degree rotation" ! {
     UnplacedRobot.place(Table5x5, 1, 1, West).right.right.right.right.right.right.move.report must_== Some("2,1,EAST")
   }
